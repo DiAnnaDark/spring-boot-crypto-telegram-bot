@@ -1,25 +1,91 @@
+# Crypto Telegram Bot
 
-## Как запустить
+Backend service for tracking cryptocurrency prices and notifying users via Telegram.
 
-При открытии директории через IntelliJ IDEA проект должен автоматически распознаться.
-У вас должна появится `run configuration CryptoBotApplication` (зеленый треугольник),
-если не появился, можно пройти в класс `CryptoBotApplication` и оттуда напрямую вызвать `main` метод.
+---
+
+## Overview
+
+This project implements a Telegram bot that allows users to monitor cryptocurrency prices and receive notifications based on configured conditions.
+
+The application demonstrates integration with external APIs, persistent storage, and bot interaction logic.
+
+---
+
+## Features
+
+- Telegram bot interaction
+- Cryptocurrency price tracking
+- User subscriptions to target price
+- Notifications on price changes
+- Persistent storage with PostgreSQL
+- Clean layered architecture
+
+---
+
+## Tech Stack
+
+- Java 17  
+- Spring Boot  
+- Spring Data JPA  
+- PostgreSQL (Docker)  
+- Gradle  
+- Telegram Bots API  
+
+---
+
+## Running the Application
+
+### 1. Start database
+
+```bash
+docker-compose up -d
+
+2. Configure application
+
+Set your Telegram bot token in application.yml:
+
+bot:
+  token: YOUR_TOKEN
+
+  3. Run application
+./gradlew bootRun
+
+or run CryptoBotApplication from IDE.
+
+Purpose
+
+This project demonstrates:
+
+Integration with Telegram API
+Working with external services
+Backend architecture design
+Persistent data handling
 
 
-## О проекте
+
+---
+
+## 🇷🇺 Русская версия (оставь снизу)
+
+```markdown
+---
+
+## 🇷🇺 Russian Version
+
+### Как запустить
+
+При открытии проекта в IntelliJ IDEA он должен автоматически распознаться.  
+Появится run configuration `CryptoBotApplication`.  
+Если нет — открой класс `CryptoBotApplication` и запусти `main`.
+
+---
 
 ### База данных
-Для удобной работы с postgreSql используется докер-образ,
-вам не нужно самостоятельно устанавливать postgreSql.
-Выполнив `docker-compose up`, вы запустите postgreSql с предустановленными
-настройками (их посмотреть можно в файле `docker-compose.yaml`).
-Для запуска докер образа вам понадобится установить `docker` и `docker-compose` 
 
-### Spring проект
+Для работы используется PostgreSQL в Docker.
 
-В данном проекте используется Spring, gradle используется в качестве системы сборки.
-Основные зависимости уже указаны, но никто вам не запрещает добавлять новые.
+Запуск:
 
-В `application.yml` находятся конфигурируемые параметры нашего приложения
-(в частности, там указывается токен вашего бота)
-
+```bash
+docker-compose up -d
